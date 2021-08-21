@@ -1,0 +1,22 @@
+      <main aria-label="products">
+        <div class="cards-list">
+          {{#cards}}
+          <div class="cards-list__item">
+            <div class="cards-list__item--image">
+              <img src="{{ image }}" alt="" />
+            </div>
+            <div class="cards-list__item--title">
+              <span>{{ title }}</span>
+            </div>
+            <div class="cards-list__item--price">{{ price }}</div>
+            <div class="cards-list__item--like {{#hideHeart}}hide{{/hideHeart}}">
+              <input class="cards-list__item--like-input" type="checkbox" id="{{ sku }}" />
+              <label for="{{ sku }}" onclick="Wishlist.toggleWishList({{sku}})"></label>
+            </div>
+            <div class="cards-list__item--close {{#hideClose}}hide{{/hideClose}}">
+              <i class="far fa-times-circle"></i>
+            </div>
+          </div>
+          {{/cards}}
+        </div>
+      </main>

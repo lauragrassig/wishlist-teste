@@ -1,0 +1,29 @@
+.breadcrumb {
+    display: flex;
+    list-style-type: none;
+    font-family: 'Open Sans';
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-weight: 800;
+
+    &__item {
+        &:not(:first-child) {
+            padding-left: 26px;
+            position: relative;
+
+            &::before {
+                content: '>';
+                position: absolute;
+                left: 8px;
+                font-size: 19px;
+                top: -2px;
+            }
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    }
+}

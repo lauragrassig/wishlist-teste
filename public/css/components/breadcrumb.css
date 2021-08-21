@@ -1,0 +1,1 @@
+.breadcrumb{display:flex;list-style-type:none;font-family:"Open Sans";margin:0;padding:0;color:#000;font-weight:800}.breadcrumb__item:not(:first-child){padding-left:26px;position:relative}.breadcrumb__item:not(:first-child)::before{content:">";position:absolute;left:8px;font-size:19px;top:-2px}.breadcrumb__item a{color:#000;text-decoration:none}

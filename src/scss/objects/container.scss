@@ -1,0 +1,25 @@
+@import "../settings/index.scss";
+
+
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    width: 100%;
+    margin-top: calc(250px + 20px);
+    max-width: 300px;
+
+    @media (min-width: 500px) {
+        max-width: 1166px;
+        margin-top: calc(138px + 20px);
+    }
+}
+
+.hide {
+    display: none;
+}
