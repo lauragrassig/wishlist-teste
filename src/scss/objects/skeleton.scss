@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+  }
+  
+  .skeleton {
+    height: 100vh;
+    margin-top: 20px;
+    position: relative;
+
+    &__card-list {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 35px;
+        margin-top: 44px;
+
+        @media (min-width: 500px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            column-gap: 68px;
+            row-gap: 35px;
+        }
+        &--card {
+            width: 240px;
+            height: 380px;
+        
+            float: left;
+            background-color: #ccc;
+            border-radius: 3px;
+            background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px);
+            background-size: 600px;
+            animation: loadingSkeleton 1.6s infinite linear;
+        }
+    }
+
+
+    &__breadcrumb {
+        width: 110px;
+        height: 24px;
+    
+        float: left;
+        background-color: #ccc;
+        border-radius: 3px;
+        background-image: linear-gradient(90deg, #ddd 0px, #e8e8e8 40px, #ddd 80px);
+        background-size: 600px;
+        animation: loadingSkeleton 1.6s infinite linear;
+        position: absolute;
+        top: -44px;
+    }
+  }
+
+
+  @keyframes loadingSkeleton {
+    0% {
+      background-position: -32px;
+    }
+    40%, 100% {
+      background-position: 208px;
+    }
+  }

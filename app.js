@@ -10,28 +10,14 @@ const app = express() // initialize app
     https://docs.turbo360.co */
 
 const config = {
-  views: 'views', // Set views directory
-  static: 'public', // Set static assets directory
+  views: 'views',
+  static: 'public',
   logging: true,
-
-  /*  To use the Turbo 360 CMS, from the terminal run
-      $ turbo extend cms
-      then uncomment line 21 below: */
-
-  // db: vertex.nedb()
 }
 
 vertex.configureApp(app, config)
 
 const main = require('./routes/main');
 app.use('/', main);
-
-// // import routes
-// const index = require('./routes/index')
-// const api = require('./routes/api') // sample API Routes
-
-// // set routes
-// app.use('/', index)
-// app.use('/api', api) // sample API Routes
 
 module.exports = app
