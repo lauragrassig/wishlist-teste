@@ -1,7 +1,7 @@
 <main aria-label="products">
   <div class="cards-list" id="cardList">
     {{#cards}}
-    <div class="cards-list__item">
+    <div class="cards-list__item" id="card-{{id}}">
       <div class="cards-list__item--image">
         <img src="{{ image }}" alt="" />
       </div>
@@ -10,13 +10,19 @@
       </div>
       <div class="cards-list__item--price">{{ price }}</div>
       <div class="cards-list__item--like {{#hideHeart}}hide{{/hideHeart}}">
-        <input class="cards-list__item--like-input" type="checkbox" id="{{ sku }}" />
-        <label for="{{ sku }}" onclick="Wishlist.toggleWishList({{sku}})"></label>
+        <input class="cards-list__item--like-input" type="checkbox" id="{{ id }}" />
+        <label for="{{ id }}" onclick="Wishlist.toggleItensWishlist({{id}})"></label>
       </div>
-      <div class="cards-list__item--close {{#hideClose}}hide{{/hideClose}}">
+      <div class="cards-list__item--close {{#hideClose}}hide{{/hideClose}}" onclick="Wishlist.removeFromWishlist({{id}})">
         <i class="far fa-times-circle"></i>
       </div>
     </div>
     {{/cards}}
   </div>
+
+    {{^cards}}
+      <div class="empty-card-list">
+        Você ainda não possui nenhum produto na Wishlist :(
+      </div>
+    {{/cards}}
 </main>
