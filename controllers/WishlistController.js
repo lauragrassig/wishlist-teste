@@ -9,10 +9,15 @@ class WishlistController {
     ];
 
     ProductModel.getProducts().then((cardsData) => {
-      let itensWishlist = JSON.parse(req.cookies.wishlist);
+			let cookiesWishlist = [];
+
+			if (req.cookies.wishlist) {
+				cookiesWishlist = JSON.parse(req.cookies.wishlist);
+			}
+
       let itemWishlist = [];
       cardsData.forEach((el) => {
-        itensWishlist.forEach((id) => {
+        cookiesWishlist.forEach((id) => {
           if (el.id == id) {
             itemWishlist.push(el);
           }

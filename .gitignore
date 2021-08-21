@@ -3,3 +3,4 @@
 .DS_Store
 package-lock.json
 .turbo-deploy
+.deploy/

@@ -20,16 +20,18 @@ class Wishlist {
 
   static loadWishlist() {
     let itensFromWishlist = Cookies.get("wishlist");
-    itensFromWishlist = JSON.parse(itensFromWishlist);
+    if (itensFromWishlist) {
+      itensFromWishlist = JSON.parse(itensFromWishlist);
 
-    let inputs = document.getElementsByClassName(
-      "cards-list__item--like-input"
-    );
+      let inputs = document.getElementsByClassName(
+        "cards-list__item--like-input"
+      );
 
-    for (let index = 0; index < inputs.length; index++) {
-      const id = itensFromWishlist.indexOf(parseInt(inputs[index].id));
-      if (id > -1) {
-        inputs[index].checked = true;
+      for (let index = 0; index < inputs.length; index++) {
+        const id = itensFromWishlist.indexOf(parseInt(inputs[index].id));
+        if (id > -1) {
+          inputs[index].checked = true;
+        }
       }
     }
   }
