@@ -45,4 +45,3 @@ Para realizar o testes do JEST
 ```
 npm run test-dev
 ```
-
